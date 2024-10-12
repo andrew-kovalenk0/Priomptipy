@@ -1,49 +1,27 @@
 # Ignore specific rules.
 ignore = [
-
+    "T203",
 ]
 
-[tool.ruff]
+# Select all rules.
+select = [
+    "ALL",
+]
+
+# Include specific file types.
 extend-include = ["*.ipynb"]
 
 # Exclude a variety of commonly ignored directories.
 exclude = [
-    ".bzr",
-    ".direnv",
-    ".eggs",
     ".git",
-    ".git-rewrite",
-    ".hg",
-    ".mypy_cache",
-    ".nox",
-    ".pants.d",
-    ".pytype",
-    ".ruff_cache",
-    ".svn",
-    ".tox",
     ".venv",
-    "__pypackages__",
-    "_build",
-    "buck-out",
-    "build",
-    "dist",
-    "node_modules",
-    "venv",
 ]
 
-# Same as Black.
+# Line length.
 line-length = 79
-
-# Allow unused variables when underscore-prefixed.
-dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
 # Allow autofix for all enabled rules (when `--fix`) is provided.
 fixable = ["ALL"]
-
-[per-file-ignores]
-# Ignore specific rules for specific files or patterns
-"tests/*" = ["E402"]
-"**/__init__.py" = ["F401"]
 
 [pydocstyle]
 convention = "numpy"
@@ -51,13 +29,8 @@ convention = "numpy"
 [pycodestyle]
 max-doc-length = 79
 
-[pyupgrade]
-# Preserve types, even if a file imports `from __future__ import annotations`.
-keep-runtime-typing = true
-
 [pylint]
 max-args = 8
-max-attributes = 8
 
 [pep8-naming]
 classmethod-decorators = ["classmethod", "pydantic.validator"]
